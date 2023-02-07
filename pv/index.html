@@ -47,4 +47,21 @@
     <p class="disclaimer">Esse Site não faz parte e nem é endossado por nenhuma outra Organização.</br> Ele funciona de Forma Individual e não possui nenhuma ligação a marcas como Google, Meta ou Tiktok.</br> Direitos Reservados:MariaLuiza | CNPJ:31.658.192/0001-51</p>
   </div>
 </body>
+<script>
+(function() {
+     const utmParamQueryString = new URLSearchParams(window.location.search);
+     if (utmParamQueryString.toString()) {
+          var navLinks = document.querySelectorAll('a');
+          navLinks.forEach(function(item) {
+               if (item.href.indexOf('siteaqui') !== -1) {
+                    if (item.href.indexOf('?') === -1) {
+                         item.href += '?' + utmParamQueryString.toString();
+                    } else {
+                         item.href += '&' + utmParamQueryString.toString();
+                    }
+               }
+          });
+     }
+})();
+</script>
 </html>
